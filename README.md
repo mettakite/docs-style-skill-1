@@ -29,6 +29,29 @@ cp -r docs-style .claude/skills/
 
 Then, in Claude Code, ask it to review any Markdown file: "Review payment-lifecycle.md against the docs style standard." You'll get findings plus the rule-by-rule report.
 
+## Inital run results
+
+The report from the first run returned:
+
+| Rule | Status | Where / Notes |
+|------|--------|---------------|
+| T1 | violation found | `Payment_Instrument` vs `Payment Instrument` vs `payment_instrument.*` — three spellings of one object |
+| T2 | applied | All five objects defined inline before use |
+| T3 | flagged — unverifiable | No schema in repo to check casing against |
+| F1 | violation found | Bare field name "id" in prose; all others correctly monospaced |
+| F2 | applied | Minor units stated up top; payout timing stated at point of use |
+| F3 | applied | Sentences short, active throughout |
+| F4 | applied | No filler words found |
+| S1 | applied | Page defines its own objects; readable standalone |
+| S2 | applied | Common-questions headings are question-shaped |
+| S3 | applied | Version, units, naming guarantees stated flatly at top |
+| S4 | not applicable | Concept page, not a task page |
+| E1 | applied | Exactly one canonical sequence, labeled as such |
+| E2 | flagged — unverifiable | No schema to validate against |
+| E3 | not applicable | No request examples on this page |
+| R1 | not applicable | Not a release note |
+| R2 | not applicable | Not a release note |
+
 ---
 
 *Ketan Mehta · [Portfolio](https://github.com/mettakite/Portfolio) · [Docs Drift](https://github.com/mettakite/Docs-Drift-Script) · [kmehta853@gmail.com](mailto:kmehta853@gmail.com)*
